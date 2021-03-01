@@ -55,49 +55,49 @@ public class StanfordEvaluation extends Evaluation implements WordSegmenter{
         list.add(run("pku"));
         Evaluation.generateReport(list, "Stanford分词器分词效果评估报告.txt");
 
-        return list;
-    }
-    private EvaluationResult run(final String lang) throws Exception{
-        // 对文本进行分词
-        String type = "ctb".equals(lang) ? "Chinese Treebank segmentation" : "Beijing University segmentation";
-        String resultText = "temp/result-text-"+type+".txt";
-        StanfordCoreNLP stanfordCoreNLP = "ctb".equals(lang) ? CTB : PKU;
-        float rate = segFile(testText, resultText, new Segmenter(){
-            @Override
-            public String seg(String text) {
-                return StanfordEvaluation.seg(stanfordCoreNLP, text);
-            }
-        });
-        // 对分词结果进行评估
-        EvaluationResult result = evaluate(resultText, standardText);
-        result.setAnalyzer("Stanford "+type);
-        result.setSegSpeed(rate);
-        return result;
-    }
-    @Override
-    public Map<String, String> segMore(String text) {
-        Map<String, String> map = new HashMap<>();
-        map.put("Stanford Beijing University segmentation", seg(PKU, text));
-        map.put("Stanford Chinese Treebank segmentation", seg(CTB, text));
-        return map;
-    }
-    private static String seg(StanfordCoreNLP stanfordCoreNLP, String text){
-        PrintStream err = System.err;
-        System.setErr(NULL_PRINT_STREAM);
-        Annotation document = new Annotation(text);
-        stanfordCoreNLP.annotate(document);
-        List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
-        StringBuilder result = new StringBuilder();
-        for(CoreMap sentence: sentences) {
-            for (CoreLabel token: sentence.get(CoreAnnotations.TokensAnnotation.class)) {
-                String word = token.get(CoreAnnotations.TextAnnotation.class);;
-                result.append(word).append(" ");
-            }
-        }
-        System.setErr(err);
-        return result.toString();
-    }
-    public static void main(String[] args) throws Exception{
-        new StanfordEvaluation().run();
-    }
-}
+//         return list;
+//     }
+//     private EvaluationResult run(final String lang) throws Exception{
+//         // 对文本进行分词
+//         String type = "ctb".equals(lang) ? "Chinese Treebank segmentation" : "Beijing University segmentation";
+//         String resultText = "temp/result-text-"+type+".txt";
+//         StanfordCoreNLP stanfordCoreNLP = "ctb".equals(lang) ? CTB : PKU;
+//         float rate = segFile(testText, resultText, new Segmenter(){
+//             @Override
+//             public String seg(String text) {
+//                 return StanfordEvaluation.seg(stanfordCoreNLP, text);
+//             }
+//         });
+//         // 对分词结果进行评估
+//         EvaluationResult result = evaluate(resultText, standardText);
+//         result.setAnalyzer("Stanford "+type);
+//         result.setSegSpeed(rate);
+//         return result;
+//     }
+//     @Override
+//     public Map<String, String> segMore(String text) {
+//         Map<String, String> map = new HashMap<>();
+//         map.put("Stanford Beijing University segmentation", seg(PKU, text));
+//         map.put("Stanford Chinese Treebank segmentation", seg(CTB, text));
+//         return map;
+//     }
+//     private static String seg(StanfordCoreNLP stanfordCoreNLP, String text){
+//         PrintStream err = System.err;
+//         System.setErr(NULL_PRINT_STREAM);
+//         Annotation document = new Annotation(text);
+//         stanfordCoreNLP.annotate(document);
+//         List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+//         StringBuilder result = new StringBuilder();
+//         for(CoreMap sentence: sentences) {
+//             for (CoreLabel token: sentence.get(CoreAnnotations.TokensAnnotation.class)) {
+//                 String word = token.get(CoreAnnotations.TextAnnotation.class);;
+//                 result.append(word).append(" ");
+//             }
+//         }
+//         System.setErr(err);
+//         return result.toString();
+//     }
+//     public static void main(String[] args) throws Exception{
+//         new StanfordEvaluation().run();
+//     }
+// }
