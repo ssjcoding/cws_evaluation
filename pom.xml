@@ -155,13 +155,13 @@
         <junit.version>4.11</junit.version>
         <slf4j-api.version>1.6.4</slf4j-api.version>
         <logback-classic.version>0.9.28</logback-classic.version>
-        <word.version>1.2</word.version>
-        <ansj.version>2.0.8</ansj.version>
-        <stanford.version>3.5.2</stanford.version>
+        <word.version>1.3</word.version>
+        <ansj.version>5.1.1</ansj.version>
+        <stanford.version>4.2.0</stanford.version>
         <jieba.version>1.0.0</jieba.version>
         <mmseg4j.version>1.10.0</mmseg4j.version>
         <smartcn.version>5.1.0</smartcn.version>
-        <hanlp.version>portable-1.1.5</hanlp.version>
+        <hanlp.version>portable-1.8.0</hanlp.version>
     </properties>
 
     <dependencies>
@@ -215,11 +215,17 @@
             <classifier>models-chinese</classifier>
         </dependency>
         <!-- fudannlp分词器 -->
-        <dependency>
-            <groupId>fudan</groupId>
-            <artifactId>fudannlp</artifactId>
-            <version>1.6.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>fudan</groupId>-->
+<!--            <artifactId>fudannlp</artifactId>-->
+<!--            <version>1.6.1</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.fnlp</groupId>-->
+<!--            <artifactId>fnlp-core</artifactId>-->
+<!--            <version>2.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
         <!-- fudannlp分词器 依赖  trove4j-->
         <dependency>
             <groupId>net.sf.trove4j</groupId>
@@ -234,22 +240,27 @@
         </dependency>
         <!-- jcseg分词器 -->
         <dependency>
-            <groupId>jcseg</groupId>
+            <groupId>org.lionsoul</groupId>
             <artifactId>jcseg-core</artifactId>
-            <version>1.9.5</version>
+            <version>2.6.2</version>
         </dependency>
         <!-- mmseg4j分词器 -->
+<!--        <dependency>-->
+<!--            <groupId>com.chenlb.mmseg4j</groupId>-->
+<!--            <artifactId>mmseg4j-core</artifactId>-->
+<!--            <version>${mmseg4j.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.chenlb.mmseg4j</groupId>
-            <artifactId>mmseg4j-core</artifactId>
-            <version>${mmseg4j.version}</version>
+            <artifactId>mmseg4j-solr</artifactId>
+            <version>2.4.0</version>
         </dependency>
         <!-- ik-analyzer分词器 -->
-        <dependency>
-            <groupId>ik</groupId>
-            <artifactId>IKAnalyzer</artifactId>
-            <version>2012FF_u1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>ik</groupId>-->
+<!--            <artifactId>IKAnalyzer</artifactId>-->
+<!--            <version>2012FF_u1</version>-->
+<!--        </dependency>-->
         <!-- smartcn分词器 -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
