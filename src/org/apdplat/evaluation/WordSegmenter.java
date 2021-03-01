@@ -63,7 +63,7 @@ public interface WordSegmenter {
         map.put("Ansj分词器", new AnsjEvaluation().seg(text));
         map.put("HanLP分词器", new HanLPEvaluation().seg(text));
         map.put("smartcn分词器", new SmartCNEvaluation().seg(text));
-        map.put("FudanNLP分词器", new FudanNLPEvaluation().seg(text));
+//         map.put("FudanNLP分词器", new FudanNLPEvaluation().seg(text));
         map.put("Jieba分词器", new JiebaEvaluation().seg(text));
         map.put("Jcseg分词器", new JcsegEvaluation().seg(text));
         map.put("MMSeg4j分词器", new MMSeg4jEvaluation().seg(text));
@@ -77,7 +77,7 @@ public interface WordSegmenter {
         map.put("Ansj分词器", new AnsjEvaluation().segMore(text));
         map.put("HanLP分词器", new HanLPEvaluation().segMore(text));
         map.put("smartcn分词器", new SmartCNEvaluation().segMore(text));
-        map.put("FudanNLP分词器", new FudanNLPEvaluation().segMore(text));
+//         map.put("FudanNLP分词器", new FudanNLPEvaluation().segMore(text));
         map.put("Jieba分词器", new JiebaEvaluation().segMore(text));
         map.put("Jcseg分词器", new JcsegEvaluation().segMore(text));
         map.put("MMSeg4j分词器", new MMSeg4jEvaluation().segMore(text));
