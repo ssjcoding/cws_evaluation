@@ -59,7 +59,7 @@ public interface WordSegmenter {
     public static Map<String, Set<String>> contrast(String text){
         Map<String, Set<String>> map = new LinkedHashMap<>();
         map.put("word分词器", new WordEvaluation().seg(text));
-        map.put("Stanford分词器", new StanfordEvaluation().seg(text));
+//         map.put("Stanford分词器", new StanfordEvaluation().seg(text));
         map.put("Ansj分词器", new AnsjEvaluation().seg(text));
         map.put("HanLP分词器", new HanLPEvaluation().seg(text));
         map.put("smartcn分词器", new SmartCNEvaluation().seg(text));
@@ -73,7 +73,7 @@ public interface WordSegmenter {
     public static Map<String, Map<String, String>> contrastMore(String text){
         Map<String, Map<String, String>> map = new LinkedHashMap<>();
         map.put("word分词器", new WordEvaluation().segMore(text));
-        map.put("Stanford分词器", new StanfordEvaluation().segMore(text));
+//         map.put("Stanford分词器", new StanfordEvaluation().segMore(text));
         map.put("Ansj分词器", new AnsjEvaluation().segMore(text));
         map.put("HanLP分词器", new HanLPEvaluation().segMore(text));
         map.put("smartcn分词器", new SmartCNEvaluation().segMore(text));
