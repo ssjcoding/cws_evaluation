@@ -239,11 +239,11 @@
             <version>${jieba.version}</version>
         </dependency>
         <!-- jcseg分词器 -->
-       <dependency>
+<!--        <dependency>
             <groupId>org.lionsoul</groupId>
             <artifactId>jcseg-core</artifactId>
             <version>1.9.8</version>
-        </dependency>
+        </dependency> -->
         <!-- mmseg4j分词器 -->
 <!--        <dependency>-->
 <!--            <groupId>com.chenlb.mmseg4j</groupId>-->
